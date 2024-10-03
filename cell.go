@@ -131,9 +131,9 @@ func (f *File) SetCellValue(sheet, cell string, value interface{}) error {
 	case int, int8, int16, int32, int64, uint, uint8, uint16, uint32, uint64:
 		err = f.setCellIntFunc(sheet, cell, v)
 	case float32:
-		err = f.SetCellFloat(sheet, cell, float64(v), -1, 32)
+		err = f.SetCellFloat(sheet, cell, float64(v), 2, 32)
 	case float64:
-		err = f.SetCellFloat(sheet, cell, v, -1, 64)
+		err = f.SetCellFloat(sheet, cell, v, 2, 64)
 	case string:
 		err = f.SetCellStr(sheet, cell, v)
 	case []byte:
